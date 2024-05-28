@@ -1,0 +1,59 @@
+﻿@model IList<JensensWebApp.Models.Article>
+
+@{
+    ViewBag.Title = "Articles";
+
+    Dictionary<string, string> topicDisplayNames = new Dictionary<string, string>
+{
+    {"Halsa", "Hälsa"},
+    {"SamhalleKonflikter", "Samhälle och Konflikter"},
+    {"Miljo", "Miljö"},
+    {"VetenskapTeknik", "Vetenskap och Teknik"},
+    {"LivsstillFritt", "Livsstil och Fritid"},
+    {"Ekonomi", "Ekonomi"},
+    {"Religion", "Religion"},
+    {"Idrott", "Idrott"}
+};
+
+}
+
+<h1>Articles</h1>
+
+<div class="container">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        <label for="topic">Select a topic:</label>
+        <select id="topic" name="topic" class="form-select">
+            <option value="">All</option>
+            @foreach (var topic in topicDisplayNames)
+            {
+                <option value="@topic.Key">@topic.Value</option>
+            }
+        </select>
+
+        <label for="sortBy">Sort by:</label>
+        <select id="sortBy" name="sortBy" class="form-select">
+            <option value="">Default</option>
+            <option value="newest">Newest to Oldest</option>
+            <option value="oldest">Oldest to Newest</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary">Filter</button>
+    }
+
+    <div class="row mt-4">
+        @foreach (var article in Model)
+        {
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@article.Title</h5>
+                        <p class="card-text">@article.Summary</p>
+                        <a href="@article.Link" class="card-link" target="_blank">Read More</a>
+                        <p class="card-text"><small class="text-muted">@article.Published.ToString("yyyy-MM-dd HH:mm:ss")</small></p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "z9tTs2/1UTlUgE9Sa0HWdyndPS4rnxSu4eHUqRhNnikN8GMQD6XgiEBdIBTroXgARXv5gxCOuXQZJlgVcNYDtg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vsers\\source\\repos\\JensenWebApplication\\JensensWebApp\\JensensWebApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vsers\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\vsers\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\vsers\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\vsers\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.29\\microsoft.netcore.app.host.win-x64.6.0.29.nupkg.sha512"
+  ],
+  "logs": []
+}
