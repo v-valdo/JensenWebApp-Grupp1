@@ -45,8 +45,10 @@ header {
   opacity: 0.4;
   font-size: 30px;
   text-align: center;
+}
 
-
+.footer:hover {
+  opacity: 1;
 }
 
 #header-logo {
