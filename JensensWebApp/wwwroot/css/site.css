@@ -11,9 +11,9 @@ body {
   background-position: center;
 }
 
-        .form-group button[type="submit"]:hover {
-            background-color: #23527c;
-        }
+.form-group button[type="submit"]:hover {
+  background-color: #23527c;
+}
 
 @media (min-width: 768px) {
   html {
@@ -27,17 +27,15 @@ form {
 }
 
 header {
-  background-color: #4800ff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
 
 .footer {
-
   height: 34px;
   width: 100%;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   background-image: none;
   background-repeat: repeat;
   background-attachment: scroll;
@@ -45,7 +43,7 @@ header {
   position: fixed;
   bottom: 0pt;
   left: 0pt;
-  opacity: 0.4;
+  opacity: 0.6;
   font-size: 30px;
   text-align: center;
 }
@@ -63,18 +61,26 @@ header {
 
 
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  background-color: #007bff;
+  height: 34px;
+  background-image: none;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  position: fixed;
+  top: 0pt;
+  left: 0pt;
+  padding: 10px 25px;
+  background-color: black;
+  text-align: center;
+  padding-bottom: 25px;
+
 }
 
-.navbar-brand {
-  font-size: 24px;
+p.navbar-brand {
+  font-size: 30px;
   font-weight: bold;
-  color: #fff;
-  text-decoration: none;
+  color: white;
+  margin-top: -5px;
 }
 
 .navbar-toggler {
@@ -87,6 +93,7 @@ header {
   margin: 0;
   display: flex;
   gap: 15px;
+  margin-top: -25px;
 }
 
 .nav-item {
@@ -96,6 +103,7 @@ header {
 .nav-link {
   font-size: 18px;
   color: #fff;
+  opacity: 0.4;
   text-decoration: none;
   padding: 5px 10px;
   transition: background-color 0.3s, color 0.3s;
@@ -105,105 +113,106 @@ header {
   background-color: #0056b3;
   color: #fff;
   border-radius: 5px;
+  opacity: 1;
 }
 
 
 
-/* Add these styles to your CSS file or inline style attribute */
-
 .card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #f7f7f7;
-    transition: box-shadow 0.5s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  transition: box-shadow 0.5s;
 }
 
 .card-body {
-    padding: 20px;
-    color: black;
+  padding: 20px;
+  color: black;
 }
 
 .card-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .card-text {
-    font-size: 14px;
-    color: #666;
+  font-size: 14px;
+  color: #666;
 }
 
 .card-link {
-    color: #337ab7;
-    text-decoration: none;
+  color: #337ab7;
+  text-decoration: none;
 }
 
-    .card-link:hover {
-        color: #23527c;
-    }
+.card-link:hover {
+  color: #23527c;
+}
 
 .text-muted {
-    color: #999;
+  color: #999;
 }
 
 .col-md-6.col-lg-4 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: black;
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+h1 {
+  text-align: center;
 }
 
 .row {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .form-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-    .form-group label {
-        font-weight: bold;
-    }
+.form-group label {
+  font-weight: bold;
+}
 
-    .form-group select {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-    }
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
 
-    .form-group button[type="submit"] {
-        width: 100%;
-        padding: 10px;
-        background-color: #337ab7;
-        color: #fff;
-        border: none;
-    }
+.form-group button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+}
 
-        .form-group button[type="submit"]:hover {
-            background-color: #23527c;
-        }
+.form-group button[type="submit"]:hover {
+  background-color: #23527c;
+}
 
 @media only screen and (max-width: 600px) {
-    .container {
-        margin-top: 20px;
-        padding: 10px;
-    }
+  .container {
+    margin-top: 20px;
+    padding: 10px;
+  }
 }
 
 .card {
-    transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s;
 }
 
-    .card:hover {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        transform: scale(1.10);
-    }
+.card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.10);
+}
