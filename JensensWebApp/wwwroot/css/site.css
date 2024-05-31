@@ -1,6 +1,16 @@
 html {
   font-size: 16px;
+  position: relative;
+  min-height: 100%;
 }
+
+body {
+  margin-bottom: 60px;
+  color: white;
+  background-image: url("Coding.jpg");
+  background-position: center;
+}
+
 
 @media (min-width: 768px) {
   html {
@@ -10,16 +20,5 @@ html {
 
 form {
   border-width: 5px;
-  border-color: black;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-  color: white;
-  background-color: #2a2a2a;
+  border-color: gray;
 }
