@@ -1,14 +1,5 @@
 html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-html {
+  font-size: 16px;
   position: relative;
   min-height: 100%;
 }
@@ -19,15 +10,12 @@ body {
   background-color: #2a2a2a;
 }
 
-div.card {
-    background-color: white;
-}
-
 .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 20px;
     background-color: #f7f7f7;
+    transition: box-shadow 0.5s;
 }
 
 .card-body {
@@ -42,7 +30,7 @@ div.card {
 
 .card-text {
     font-size: 14px;
-    color: #000;
+    color: #666;
 }
 
 .card-link {
@@ -106,3 +94,8 @@ div.card {
         padding: 10px;
     }
 }
+
+
+    .card:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
