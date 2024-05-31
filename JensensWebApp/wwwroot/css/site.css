@@ -1,101 +1,27 @@
 html {
-  font-size: 16px;
-  position: relative;
-  min-height: 100%;
+    font-size: 16px;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
   margin-bottom: 60px;
-  color: black;
-  background-color: #2a2a2a;
+  color: white;
+  background-image: url("Coding.jpg");
+  background-position: center;
 }
-
-.card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #f7f7f7;
-    transition: box-shadow 0.5s;
-}
-
-.card-body {
-    padding: 20px;
-}
-
-.card-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.card-text {
-    font-size: 14px;
-    color: #666;
-}
-
-.card-link {
-    color: #337ab7;
-    text-decoration: none;
-}
-
-    .card-link:hover {
-        color: #23527c;
-    }
-
-.text-muted {
-    color: #999;
-}
-
-.col-md-6.col-lg-4 {
-    margin-bottom: 20px;
-}
-.container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.row {
-    margin-top: 20px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-    .form-group label {
-        font-weight: bold;
-    }
-
-    .form-group select {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-    }
-
-    .form-group button[type="submit"] {
-        width: 100%;
-        padding: 10px;
-        background-color: #337ab7;
-        color: #fff;
-        border: none;
-    }
 
         .form-group button[type="submit"]:hover {
             background-color: #23527c;
         }
 
-@media only screen and (max-width: 600px) {
-    .container {
-        margin-top: 20px;
-        padding: 10px;
-    }
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
 }
 
-
-    .card:hover {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
+form {
+  border-width: 5px;
+  border-color: gray;
+}
