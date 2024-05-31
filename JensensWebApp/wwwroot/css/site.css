@@ -221,8 +221,8 @@ h1 {
   position: fixed;
   bottom: 22px;
   left: 0;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   background-image: url("robot.png");
   background-size: contain;
   background-repeat: no-repeat;
