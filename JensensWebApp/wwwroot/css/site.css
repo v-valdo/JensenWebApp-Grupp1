@@ -216,3 +216,15 @@ h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transform: scale(1.10);
 }
+
+.robot {
+  position: fixed;
+  bottom: 22px;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-image: url("robot.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.1s linear;
+}
