@@ -106,6 +106,52 @@ header {
   color: #fff;
   border-radius: 5px;
 }
+
+
+
+/* Add these styles to your CSS file or inline style attribute */
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    transition: box-shadow 0.5s;
+}
+
+.card-body {
+    padding: 20px;
+    color: black;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #666;
+}
+
+.card-link {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+    .card-link:hover {
+        color: #23527c;
+    }
+
+.text-muted {
+    color: #999;
+}
+
+.col-md-6.col-lg-4 {
+    margin-bottom: 20px;
+}
+
 .container {
     max-width: 800px;
     margin: 40px auto;
@@ -113,6 +159,7 @@ header {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: black;
 }
 
 .row {
@@ -151,29 +198,12 @@ header {
         padding: 10px;
     }
 }
+
 .card {
-    width: 300px;
-    padding: 20px;
-    margin: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.5s;
 }
 
     .card:hover {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .card h2 {
-        font-weight: bold;
-    }
-
-    .card p {
-        font-size: 16px;
-    }
-
-    .card .author {
-        font-size: 14px;
-        color: #666;
+        transform: scale(1.10);
     }
