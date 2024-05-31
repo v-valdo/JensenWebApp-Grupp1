@@ -1,7 +1,7 @@
 html {
-    font-size: 16px;
-    position: relative;
-    min-height: 100%;
+  font-size: 16px;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
@@ -25,3 +25,155 @@ form {
   border-width: 5px;
   border-color: gray;
 }
+
+header {
+  background-color: #4800ff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.footer {
+
+  height: 34px;
+  width: 100%;
+  background-color: white;
+  color: black;
+  background-image: none;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  position: fixed;
+  bottom: 0pt;
+  left: 0pt;
+  opacity: 0.4;
+  font-size: 30px;
+  text-align: center;
+}
+
+.footer:hover {
+  opacity: 1;
+}
+
+#header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #007bff;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-toggler {
+  display: none;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #0056b3;
+  color: #fff;
+  border-radius: 5px;
+}
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+    .form-group label {
+        font-weight: bold;
+    }
+
+    .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+
+    .form-group button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #337ab7;
+        color: #fff;
+        border: none;
+    }
+
+        .form-group button[type="submit"]:hover {
+            background-color: #23527c;
+        }
+
+@media only screen and (max-width: 600px) {
+    .container {
+        margin-top: 20px;
+        padding: 10px;
+    }
+}
+.card {
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.5s;
+}
+
+    .card:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h2 {
+        font-weight: bold;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+
+    .card .author {
+        font-size: 14px;
+        color: #666;
+    }
