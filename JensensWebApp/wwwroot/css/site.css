@@ -2,6 +2,7 @@ html {
   font-size: 16px;
   position: relative;
   min-height: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -26,10 +27,18 @@ form {
   border-color: gray;
 }
 
-header {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+#header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
 }
+
+#header-logo img {
+  width: 450px; 
+  height: auto; 
+}
+
 
 .footer {
   height: 34px;
@@ -52,7 +61,7 @@ header {
   opacity: 1;
 }
 
-#header-logo {
+#header-logo img{
   display: flex;
   align-items: center;
   justify-content: center;
