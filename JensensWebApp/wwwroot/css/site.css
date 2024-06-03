@@ -54,16 +54,12 @@ header {
 
 #header-logo {
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 10px 0;
 }
 
 
 .navbar {
   height: 34px;
-  background-image: none;
-  background-repeat: repeat;
   background-attachment: scroll;
   background-position: 0% 0%;
   position: fixed;
@@ -116,18 +112,18 @@ p.navbar-brand {
   opacity: 1;
 }
 
-
-
 .card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 30px lime;
   border-radius: 10px;
-  padding: 20px;
+  padding: 5px;
   background-color: #f7f7f7;
-  transition: box-shadow 0.5s;
+  margin-bottom: 40px;
+  transition: box-shadow 1.2s;
+  opacity: 0.9;
 }
 
 .card-body {
-  padding: 20px;
+  padding: 5px;
   color: black;
 }
 
@@ -143,21 +139,19 @@ p.navbar-brand {
 }
 
 .card-link {
-  color: #337ab7;
   text-decoration: none;
 }
 
-.card-link:hover {
-  color: #23527c;
+.card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03);
+  opacity: 1;
 }
 
 .text-muted {
   color: #999;
 }
 
-.col-md-6.col-lg-4 {
-  margin-bottom: 20px;
-}
 
 .container {
   max-width: 800px;
@@ -186,7 +180,7 @@ h1 {
 .form-group select {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid transparent;
 }
 
 .form-group button[type="submit"] {
@@ -206,15 +200,6 @@ h1 {
     margin-top: 20px;
     padding: 10px;
   }
-}
-
-.card {
-  transition: box-shadow 0.5s;
-}
-
-.card:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transform: scale(1.10);
 }
 
 .robot {
