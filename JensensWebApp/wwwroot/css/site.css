@@ -2,12 +2,14 @@ html {
   font-size: 16px;
   position: relative;
   min-height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: #2a2a2a;
 }
 
 body {
   margin-bottom: 60px;
   color: white;
-  background-image: url("Coding.jpg");
+  /* background-image: url("Coding.jpg"); */
   background-position: center;
 }
 
@@ -26,10 +28,18 @@ form {
   border-color: gray;
 }
 
-header {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+#header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
 }
+
+#header-logo img {
+  width: 450px; 
+  height: auto; 
+}
+
 
 .footer {
   height: 34px;
@@ -44,7 +54,7 @@ header {
   bottom: 0pt;
   left: 0pt;
   opacity: 0.6;
-  font-size: 30px;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -52,23 +62,27 @@ header {
   opacity: 1;
 }
 
-#header-logo {
+#header-logo img{
   display: flex;
   justify-content: center;
 }
 
 
 .navbar {
-  height: 34px;
+  display: flex;
+  justify-content: center;
+  flex-direction:row;
+  height: 50px;
+  background-image: none;
+  background-repeat: repeat;
   background-attachment: scroll;
   background-position: 0% 0%;
-  position: fixed;
   top: 0pt;
   left: 0pt;
   padding: 10px 25px;
   background-color: black;
   text-align: center;
-  padding-bottom: 25px;
+  padding-bottom: 0px;
 
 }
 
@@ -157,7 +171,6 @@ p.navbar-brand {
   max-width: 800px;
   margin: 40px auto;
   background-color: transparent;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: white;
 }
 
