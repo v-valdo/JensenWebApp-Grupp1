@@ -8,3 +8,24 @@
     <p>Use this page to detail your site's privacy policy.</p>
 </div>
 
+<h1>Contact Us</h1>
+<div id="contactContainer">
+    <form id="contactForm">
+        <label for="fName">First name:</label>
+        <input type="text" name="fName" required>
+        <label for="lName">Last name:</label>
+        <input type="text" name="lName">
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+        <label for="subject">Subject:</label>
+        <select name=subject required>
+            <option>Select a subject</option>
+            <option>Article</option>
+            <option>Private policy</option>
+            <option>Other</option>
+        </select>
+        <label for="message">Message:</label>
+        <textarea name="message" rows="4" required></textarea>
+        <input type="submit" value="Submit">
+    </form>
+</div>
