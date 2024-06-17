@@ -12,7 +12,13 @@
 <div id="contactContainer">
     <div id="contactText">
         <h2>Got any questions?</h2>
-        <p>Don't hesitate to contact us</p>
+        <p>Don't hesitate to contact us!</p>
+        <p>Fill in the contact form to the right or send us an email to
+            <a href="mailto:info@spongenews.com">info@spongenews.com</a>
+        </p>
+        <div>
+            <img id="pic" src="~/images/email-robot.png" alt="Woman asking robot to read">
+        </div>
     </div>
     <form id="contactForm">
         <label for="fName">First name:</label>
@@ -30,7 +36,7 @@
         </select>
         <label for="message">Message:</label>
         <textarea class="contactInput" name="message" rows="4" placeholder="Write your message.." required></textarea>
-        <input class="contactInput" type="submit" value="Submit">
+        <input id="submitButton" type="submit" value="Submit">
     </form>
 </div>
 
