@@ -287,3 +287,7 @@ input[type="submit"]:hover {
 .contactInput:focus, select#subject:focus{
   border-color: #ebe41d;
 }
+
+select#subject, input[type="submit"] {
+  cursor: pointer;
+}
