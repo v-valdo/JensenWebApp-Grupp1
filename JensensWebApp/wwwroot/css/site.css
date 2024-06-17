@@ -274,3 +274,16 @@ form#contactForm{
 select#subject{
   width: 87%;
 }
+
+input[type="submit"] {
+  width: 50%;
+  background-color: #fff600;
+}
+
+input[type="submit"]:hover {
+  background-color: #e6e04b;
+}
+
+.contactInput:focus, select#subject:focus{
+  border-color: #ebe41d;
+}
