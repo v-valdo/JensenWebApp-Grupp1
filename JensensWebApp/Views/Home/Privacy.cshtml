@@ -10,13 +10,17 @@
 
 <h1>Contact Us</h1>
 <div id="contactContainer">
+    <div id="contactText">
+        <h2>Got any questions?</h2>
+        <p>Don't hesitate to contact us</p>
+    </div>
     <form id="contactForm">
         <label for="fName">First name:</label>
-        <input type="text" class="contactInput" name="fName" required>
+        <input type="text" class="contactInput" name="fName" placeholder="First name" required>
         <label for="lName">Last name:</label>
-        <input type="text" class="contactInput" name="lName">
+        <input type="text" class="contactInput" placeholder="Last name" name="lName">
         <label for="email">Email:</label>
-        <input type="email" class="contactInput" name="email" required>
+        <input type="email" class="contactInput" placeholder="Email" name="email" required>
         <label for="subject">Subject:</label>
         <select id="subject" name=subject required>
             <option>Select a subject</option>
@@ -25,8 +29,8 @@
             <option>Other</option>
         </select>
         <label for="message">Message:</label>
-        <textarea class="contactInput" name="message" rows="4" required></textarea>
-        <input id="submitButton" type="submit" value="Submit">
+        <textarea class="contactInput" name="message" rows="4" placeholder="Write your message.." required></textarea>
+        <input class="contactInput" type="submit" value="Submit">
     </form>
 </div>
 

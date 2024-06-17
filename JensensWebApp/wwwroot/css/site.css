@@ -240,44 +240,55 @@ div#privacy{
 }
 
 div#contactContainer{
+  background-color: #f7f7f7;
+  color: #000;
   border-color: #000;
   border-style: solid;
   border-width: 4px;
   height: 650px;
-  background-color: #f7f7f7;
-  color: #000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+div#contactText {
+  border-color: #ce1a1a;
+  border-style: solid;
+  border-width: 2px;
+  flex: 1
 }
 
 form#contactForm{
   border-color: #000;
-  align-items: center;
   border-style: solid;
   border-width: 2px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
   width: 50%;
   padding: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.contactInput, select#subject, [type="submit"] {
+/*Instead of listing several types, one common class is used for input/button*/
+.contactInput, select#subject {
+  background-color: #fffeda;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  border: 2px solid #000;
+  border-radius: 5px;
   width: 80%;
   padding: 10px;
-  margin: 10px;
-  border: 2px solid #000;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  resize: vertical;
   outline: none;
-  background-color: #fffeda;
-}
-
-select#subject{
-  width: 87%;
+  resize: none; /*stopping user to resize textarea, scroll is added instead*/
 }
 
 input[type="submit"] {
-  width: 50%;
   background-color: #fff600;
+  width: 50%;
 }
 
 input[type="submit"]:hover {
