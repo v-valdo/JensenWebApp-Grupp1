@@ -21,6 +21,14 @@ body {
   html {
     font-size: 16px;
   }
+  #contactText {
+      order: 1;
+      margin-bottom: 20px;
+  }
+
+  #contactForm {
+      order: 2;
+}
 }
 
 form {
@@ -232,50 +240,50 @@ h1 {
 }
 
 /*Privacy page styling*/
-div#privacy{
-  border-color: #000;
-  border-style: solid;
-  border-width: 4px;
+div#privacy {
+  border: 4px #000 solid;
   height: 400px
 }
 
-div#contactContainer{
+div#contactContainer {
   background-color: #fff;
   color: #000;
-  border-color: #000;
-  border-style: solid;
-  border-width: 4px;
-  height: 650px;
+  border-radius: 5px;
+  min-height: 550px;
   padding: 20px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  box-shadow: 0px 0px 18px royalblue;
 }
 
 div#contactText {
-  border-color: #ce1a1a;
-  border-style: solid;
-  border-width: 2px;
-  flex: 1
+  flex: 1;
+  margin-bottom: 10px;
 }
 
-form#contactForm{
-  border-color: #000;
-  border-style: solid;
-  border-width: 2px;
-  width: 50%;
+form#contactForm {
+  background-color: #ededf1;
+  border-radius: 5px;
+  min-width: 50%;
+  margin: 10px;
   padding: 10px;
   align-items: center;
   display: flex;
   flex-direction: column;
 }
 
+h2#contactFormH2 {
+  color: #787878;
+}
+
 /*Instead of listing several types, one common class is used for input/button*/
 .contactInput, select#subject, input#submitButton {
-  background-color: #fffeda;
+  background-color: #fff;
   box-sizing: border-box;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  border: 2px solid #000;
+  border: 2px solid #90a1ca;
   border-radius: 5px;
   width: 80%;
   padding: 10px;
@@ -288,6 +296,7 @@ form#contactForm{
 
 input#submitButton {
   background-color: #fff600;
+  border-color: #e6e04b;
   width: 50%;
 }
 
@@ -296,13 +305,13 @@ input#submitButton:hover {
 }
 
 .contactInput:focus, select#subject:focus{
-  border-color: #ebe41d;
+  border-color: #4169e1;
 }
 
 select#subject, input#submitButton {
   cursor: pointer;
 }
 
-img#pic{
+img#contactImg {
   width: 100%;
 }
