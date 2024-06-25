@@ -72,7 +72,7 @@
     }
 });
 
-    document.getElementById('contactForm').addEventListener('submit', function (event) {
+document.getElementById('contactForm').addEventListener('submit', function (event) {
     event.preventDefault(); // making sure confetti won't activate in a incomplete form
 
     // Calculating the position of the button
