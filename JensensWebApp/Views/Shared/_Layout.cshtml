@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <!-- <link rel="stylesheet" href="~/JensensWebApp.styles.css" asp-append-version="true" /> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('robotMinimized')) {
+                localStorage.setItem('robotMinimized', 'false');
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -43,7 +50,19 @@
         </main>
     </div>
 
-    <div class="robot" id="robot"></div>
+    <div class="robot-container">
+        <div class="scrolling-text" id="scrolling-text">Need help? Click me!</div>
+        <div class="robot" id="robot"></div>
+        <div class="chat-bubbles" id="chat-bubbles">
+            <div class="chat-bubble" id="bubble-top">To the top</div>
+            <div class="chat-bubble" id="bubble-nav">Go to @ViewData["Title"] Page</div>
+            <div class="chat-bubble" id="bubble-hide">Minimize Robot</div>
+        </div>
+        <div class="minimized-robot" id="minimized-robot"></div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+
     <footer class="border-top footer text-muted">
         <div class="footer">
             &copy; 2023 - JensensWebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
