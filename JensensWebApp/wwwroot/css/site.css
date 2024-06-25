@@ -361,7 +361,7 @@ h2#contactFormH2 {
   color: #787878;
 }
 
-/*Instead of listing several types, one common class is used for input/button*/
+/*Instead of listing several types, one common (contactInput) class is used for input/button*/
 .contactInput, select#subject, input#submitButton {
   background-color: #fff;
   box-sizing: border-box;
