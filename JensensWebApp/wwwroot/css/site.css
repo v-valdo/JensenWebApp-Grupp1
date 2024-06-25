@@ -338,6 +338,7 @@ div#contactContainer {
   justify-content: space-around;
   align-items: center;
   box-shadow: 0px 0px 18px #4169e1;
+  overflow: hidden;
 }
 
 div#contactText {
