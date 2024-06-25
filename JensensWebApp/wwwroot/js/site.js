@@ -72,6 +72,7 @@
     }
 });
 
+// Contact form confetti
 document.getElementById('contactForm').addEventListener('submit', function (event) {
     event.preventDefault(); // making sure confetti won't activate in a incomplete form
 
@@ -89,3 +90,24 @@ document.getElementById('contactForm').addEventListener('submit', function (even
         colors: ['#0056b3', '#e6e04b', '#2a2a2a', '#fcf9a1'] 
     });
 });
+
+// Privacy policy slideshow
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  const slides = document.getElementsByClassName("slides");
+  const bullets = document.getElementsByClassName("bullet");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < bullets.length; i++) {
+    bullets[i].className = bullets[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  bullets[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000);
+}
