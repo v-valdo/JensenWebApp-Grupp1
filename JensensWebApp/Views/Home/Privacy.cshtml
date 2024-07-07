@@ -1,6 +1,78 @@
 ﻿@{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Privacy policy";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<h1>@ViewData["Title"]</h1>
+<div>
+    <div id="slideshow-container">
+        <div class="slides">
+            <img class="slideshow" src="~/images/privacy-slideshow/1-car.jpg">
+        </div>
+        <div class="slides">
+            <img class="slideshow" src="~/images/privacy-slideshow/2-handbag.jpg">
+        </div>
+        <div class="slides">
+            <img class="slideshow" src="~/images/privacy-slideshow/3-television.jpg">
+        </div>
+        <div class="slides">
+            <img class="slideshow" src="~/images/privacy-slideshow/4-dvd.jpg">
+        </div>
+        <div class="slides">
+            <img class="slideshow" src="~/images/privacy-slideshow/5-download.jpg">
+        </div>
+        <div class="slides">
+            <img class="slideshow" src="~/images/privacy-slideshow/6-against-policy.jpg">
+        </div>
+        <div class="slides">
+            <img class="slideshow" src="~/images/privacy-slideshow/7-leaked-info.jpg">
+        </div>
+    </div>
+    <br>
+
+    <div id="bullets">
+        <span class="bullet"></span> 
+        <span class="bullet"></span> 
+        <span class="bullet"></span> 
+        <span class="bullet"></span> 
+        <span class="bullet"></span> 
+        <span class="bullet"></span> 
+        <span class="bullet"></span> 
+    </div>
+</div>
+
+<h1>Contact us</h1>
+<div id="contactContainer">
+    <div id="contactText">
+        <h2>Got any questions?</h2>
+        <p>Don't hesitate to contact us!</p>
+        <p>Fill in the contact form or just send us an email to
+            <a href="mailto:info@spongenews.com">info@spongenews.com</a>
+        </p>
+        <div>
+            <img id="contactImg" src="~/images/email-robot.png" alt="Woman asking robot to read">
+        </div>
+    </div>
+    <form id="contactForm">
+        <h2 id="contactFormH2">Contact form</h2>
+        <label for="fName">First name:</label>
+        <input type="text" class="contactInput" name="fName" placeholder="First name" required>
+        <label for="lName">Last name:</label>
+        <input type="text" class="contactInput" placeholder="Last name" name="lName">
+        <label for="email">Email:</label>
+        <input type="email" class="contactInput" placeholder="Email" name="email" required>
+        <label for="subject">Subject:</label>
+        <select id="subject" name=subject required>
+            <option>Select a subject</option>
+            <option>Article</option>
+            <option>Privacy policy</option>
+            <option>Other</option>
+        </select>
+        <label for="message">Message:</label>
+        <textarea class="contactInput" name="message" rows="4" placeholder="Write your message.." required></textarea>
+        <input id="submitButton" type="submit" value="Submit">
+    </form>
+</div>
+
+<!-- Confetti effect JavaScript when pressing submit on the form -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.js"></script>
+<script src="~/wwwroot/js/site.js"></script>
