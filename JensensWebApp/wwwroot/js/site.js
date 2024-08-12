@@ -155,20 +155,31 @@ function showSlides() {
    const titleElement = card.querySelector('.card-title');
    const summaryElement = card.querySelector('.card-text');
 
-   // Markera i titeln
-   if (titleElement) {
-     const originalTitle = titleElement.textContent;
-     const highlightedTitle = originalTitle.replace(new RegExp(searchTerm, 'gi'), match => `<mark>${match}</mark>`);
-     titleElement.innerHTML = highlightedTitle;
-   }
-
-   // Markera i sammanfattningen
-   if (summaryElement) {
-     const originalSummary = summaryElement.textContent;
-     const highlightedSummary = originalSummary.replace(new RegExp(searchTerm, 'gi'), match => `<mark>${match}</mark>`);
-     summaryElement.innerHTML = highlightedSummary;
-   }
+  // If searchTerm is empty, reset highlighting
+  if (searchTerm.trim() === ' ') {
+    if (titleElement) {
+      titleElement.innerHTML = titleElement.textContent;
+    }
+    if (summaryElement) {
+      summaryElement.innerHTML = summaryElement.textContent;
+    }
+    return; // Exit the function early if there's no search term
   }
+
+  // Markera i titeln
+  if (titleElement) {
+    const originalTitle = titleElement.textContent;
+    const highlightedTitle = originalTitle.replace(new RegExp(searchTerm, 'gi'), match => `<mark>${match}</mark>`);
+    titleElement.innerHTML = highlightedTitle;
+  }
+
+  // Markera i sammanfattningen
+  if (summaryElement) {
+    const originalSummary = summaryElement.textContent;
+    const highlightedSummary = originalSummary.replace(new RegExp(searchTerm, 'gi'), match => `<mark>${match}</mark>`);
+    summaryElement.innerHTML = highlightedSummary;
+  }
+}
 
 }); 
   
