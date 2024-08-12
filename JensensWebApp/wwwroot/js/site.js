@@ -1,4 +1,5 @@
-﻿window.addEventListener('DOMContentLoaded', () => {
+﻿window.addEventListener('DOMContentLoaded', () => 
+{
     const robot = document.getElementById('robot');
     const chatBubbles = document.getElementById('chat-bubbles');
     const minimizedRobot = document.getElementById('minimized-robot');
@@ -61,10 +62,10 @@
         backdrop.classList.remove('active');
         robot.classList.remove('active');
     }
-});
 
 // Contact form confetti
-document.getElementById('contactForm').addEventListener('submit', function (event) {
+if (document.getElementById('contactForm')) {
+  document.getElementById('contactForm').addEventListener('submit', function (event) {
     event.preventDefault(); // making sure confetti won't activate in a incomplete form
 
     // Calculating the position of the button
@@ -102,71 +103,72 @@ function showSlides() {
   bullets[slideIndex-1].className += " active";
   setTimeout(showSlides, 3000);
 }
+};
 
-// Search articles
-document.addEventListener('DOMContentLoaded', () => {
-const searchInput = document.getElementById('searchInput');
-const articleCards = document.querySelectorAll('.card');
-// Debounce-funktion för att fördröja sökningen
-let timeoutId;
-function debounce(func, delay) {
-  clearTimeout(timeoutId);
-  timeoutId = setTimeout(func, delay);
-}
-searchInput.addEventListener('input', () => {
-  debounce(() => performSearch(searchInput.value), 300); // 300 ms fördröjning
-});
+ // Search articles
+ const searchInput = document.getElementById('searchInput');
+ const articleCards = document.querySelectorAll('.card');
 
-function performSearch(searchTerm) {
+ // Debounce-funktion för att fördröja sökningen
+ let timeoutId;
+ function debounce(func, delay) {
+   clearTimeout(timeoutId);
+   timeoutId = setTimeout(func, delay);
+ }
 
-  const normalizedSearchTerm = searchTerm.toLowerCase();
+ searchInput.addEventListener('input', () => {
+   debounce(() => performSearch(searchInput.value), 300); // 300 ms fördröjning
+ });
 
-  articleCards.forEach(card => {
-    const title = card.querySelector('.card-title').textContent.toLowerCase();
-    const summary = card.querySelector('.card-text').textContent.toLowerCase();
-    const topics = Array.from(card.querySelectorAll('.card-topic')) 
-      .map(topicElement => topicElement.textContent.toLowerCase());
+ function performSearch(searchTerm) {
+   const normalizedSearchTerm = searchTerm.toLowerCase();
 
-    const isMatch = //.includes är en boolean som returnar om det finns artiklar som stämmer med input
-      title.includes(normalizedSearchTerm) || 
-      summary.includes(normalizedSearchTerm) || 
-      topics.some(topic => topic.includes(normalizedSearchTerm)); //some() is for arrays only, while includes() works on both arrays and strings.
+   articleCards.forEach(card => {
+     const title = card.querySelector('.card-title').textContent.toLowerCase();
+     const summary = card.querySelector('.card-text').textContent.toLowerCase();
+     const topics = Array.from(card.querySelectorAll('.card-topic')) 
+     .map(topicElement => topicElement.textContent.toLowerCase());
 
-    if (isMatch) {
-      card.style.display = 'block';
-      highlightMatches(card, normalizedSearchTerm); // Markera sökträffar
-    } else {
-      card.style.display = 'none';
-    }
-  });
+     const isMatch = 
+       title.includes(normalizedSearchTerm) || 
+       summary.includes(normalizedSearchTerm)
+       || topics.some(topic => topic.includes(normalizedSearchTerm)); 
 
-    // Visa meddelande om inga artiklar matchar OCH om sökfältet inte är tomt
-    if (Array.from(articleCards).every(card => card.style.display === 'none') && searchTerm.trim() !== '') {
-      const noResultsMessage = document.getElementById('noResultsMessage');
-      noResultsMessage.style.display = 'block';
-    } else {
-      const noResultsMessage = document.getElementById('noResultsMessage');
-      noResultsMessage.style.display = 'none';
-    }
+     if (isMatch) {
+       card.style.display = 'block';
+       highlightMatches(card, normalizedSearchTerm); 
+     } else {
+       card.style.display = 'none';
+     }
+   });
+
+   // Visa meddelande om inga artiklar matchar OCH om sökfältet inte är tomt
+   const noResultsMessage = document.getElementById('noResultsMessage');
+   if (Array.from(articleCards).every(card => card.style.display === 'none') && searchTerm.trim() !== '') {
+     noResultsMessage.style.display = 'block';
+   } else {
+     noResultsMessage.style.display = 'none';
+   }
+ }
+
+ function highlightMatches(card, searchTerm) {
+   const titleElement = card.querySelector('.card-title');
+   const summaryElement = card.querySelector('.card-text');
+
+   // Markera i titeln
+   if (titleElement) {
+     const originalTitle = titleElement.textContent;
+     const highlightedTitle = originalTitle.replace(new RegExp(searchTerm, 'gi'), match => `<mark>${match}</mark>`);
+     titleElement.innerHTML = highlightedTitle;
+   }
+
+   // Markera i sammanfattningen
+   if (summaryElement) {
+     const originalSummary = summaryElement.textContent;
+     const highlightedSummary = originalSummary.replace(new RegExp(searchTerm, 'gi'), match => `<mark>${match}</mark>`);
+     summaryElement.innerHTML = highlightedSummary;
+   }
   }
 
-  function highlightMatches(card, searchTerm) {
-    const titleElement = card.querySelector('.card-title');
-    const summaryElement = card.querySelector('.card-text');
-  }
-  });
-
-    // Markera i titeln
-    if (titleElement) {
-      const originalTitle = titleElement.textContent;
-      const highlightedTitle = originalTitle.replace(new RegExp(searchTerm, 'gi'), match => `<mark>${match}</mark>`); 
-    
-      titleElement.innerHTML = highlightedTitle;
-    }
-
-    // Markera i sammanfattningen
-    if (summaryElement) {
-      const originalSummary = summaryElement.textContent;
-      const highlightedSummary = originalSummary.replace(new RegExp(searchTerm, 'gi'), match => `<mark>${match}</mark>`);
-      summaryElement.innerHTML = highlightedSummary;
-    }
+}); 
+  
