@@ -111,3 +111,76 @@ function showSlides() {
   bullets[slideIndex-1].className += " active";
   setTimeout(showSlides, 3000);
 }
+
+// Search articles
+const searchInput = document.getElementById('searchInput');
+const articleCards = document.querySelectorAll('.card');
+
+// Debounce-funktion för att fördröja sökningen
+let timeoutId;
+function debounce(func, delay) {
+  clearTimeout(timeoutId);
+  timeoutId = setTimeout(func, delay);
+}
+
+searchInput.addEventListener('input', () => {
+  debounce(() => performSearch(searchInput.value), 300); // 300 ms fördröjning
+});
+
+function performSearch(searchTerm) {
+  const normalizedSearchTerm = searchTerm.toLowerCase();
+
+  articleCards.forEach(card => {
+    const title = card.querySelector('.card-title').textContent.toLowerCase();
+    const summary = card.querySelector('.card-text').textContent.toLowerCase();
+    const topics = Array.from(card.querySelectorAll('.card-topic')) 
+      .map(topicElement => topicElement.textContent.toLowerCase());
+
+    const isMatch = //.includes är en boolean som returnar om det finns artiklar som stämmer med input
+      title.includes(normalizedSearchTerm) || 
+      summary.includes(normalizedSearchTerm) || 
+      topics.some(topic => topic.includes(normalizedSearchTerm)); //some() is for arrays only, while includes() works on both arrays and strings.
+
+    if (isMatch) {
+      card.style.display = 'block';
+      highlightMatches(card, normalizedSearchTerm); // Markera sökträffar
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+    // Visa meddelande om inga artiklar matchar OCH om sökfältet inte är tomt
+    if (Array.from(articleCards).every(card => card.style.display === 'none') && searchTerm.trim() !== '') {
+      const noResultsMessage = document.getElementById('noResultsMessage');
+      noResultsMessage.style.display = 'block';
+    } else {
+      const noResultsMessage = document.getElementById('noResultsMessage');
+      noResultsMessage.style.display = 'none';
+    }
+  }
+  
+
+  function highlightMatches(card, searchTerm) {
+    const titleElement = card.querySelector('.card-title');
+    const summaryElement = card.querySelector('.card-text');
+  
+    // Markera i titeln
+    if (titleElement) {
+      const originalTitle = titleElement.textContent;
+      const highlightedTitle = originalTitle.replace(new RegExp(searchTerm, 'gi'), match => `<mark>${match}</mark>`); 
+      //g: global - Detta innebär att sökningen efter matchningar i strängen inte stoppar efter den första träffen, utan fortsätter att söka efter alla möjliga matchningar.
+      //i: case-insensitive - Detta innebär att sökningen är skiftlägesokänslig, så att både stora och små bokstäver matchar.
+    
+      titleElement.innerHTML = highlightedTitle;
+    }
+  
+    // Markera i sammanfattningen
+    if (summaryElement) {
+      const originalSummary = summaryElement.textContent;
+      const highlightedSummary = originalSummary.replace(new RegExp(searchTerm, 'gi'), match => `<mark>${match}</mark>`);
+      summaryElement.innerHTML = highlightedSummary;
+      
+    }
+    
+  }
+  
