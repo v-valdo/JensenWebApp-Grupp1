@@ -8,7 +8,6 @@
     const bubbleNav = document.getElementById('bubble-nav');
     const bubbleHide = document.getElementById('bubble-hide');
 
-
     function minimizeRobot() {
         robot.classList.add('minimized');
         minimizedRobot.style.display = 'block';
@@ -18,7 +17,6 @@
         localStorage.setItem('robotMinimized', 'true');
     }
 
-
     function restoreRobot() {
         robot.classList.remove('minimized');
         minimizedRobot.style.display = 'none';
@@ -27,7 +25,6 @@
         scrollingText.style.display = 'block';
         localStorage.setItem('robotMinimized', 'false');
     }
-
 
     robot.addEventListener('click', () => {
         if (chatBubbles.style.display === 'flex') {
@@ -40,12 +37,10 @@
         }
     });
 
-
     bubbleTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         closeChatBubbles();
     });
-
 
     bubbleNav.addEventListener('click', () => {
         const currentPage = window.location.pathname === '/Home/Privacy' ? '/' : '/Home/Privacy';
@@ -53,17 +48,13 @@
         closeChatBubbles();
     });
 
-
     bubbleHide.addEventListener('click', minimizeRobot);
 
-
     minimizedRobot.addEventListener('click', restoreRobot);
-
 
     backdrop.addEventListener('click', () => {
         closeChatBubbles();
     });
-
 
     function closeChatBubbles() {
         chatBubbles.style.display = 'none';
@@ -113,21 +104,21 @@ function showSlides() {
 }
 
 // Search articles
+document.addEventListener('DOMContentLoaded', () => {
 const searchInput = document.getElementById('searchInput');
 const articleCards = document.querySelectorAll('.card');
-
 // Debounce-funktion för att fördröja sökningen
 let timeoutId;
 function debounce(func, delay) {
   clearTimeout(timeoutId);
   timeoutId = setTimeout(func, delay);
 }
-
 searchInput.addEventListener('input', () => {
   debounce(() => performSearch(searchInput.value), 300); // 300 ms fördröjning
 });
 
 function performSearch(searchTerm) {
+
   const normalizedSearchTerm = searchTerm.toLowerCase();
 
   articleCards.forEach(card => {
@@ -158,29 +149,24 @@ function performSearch(searchTerm) {
       noResultsMessage.style.display = 'none';
     }
   }
-  
 
   function highlightMatches(card, searchTerm) {
     const titleElement = card.querySelector('.card-title');
     const summaryElement = card.querySelector('.card-text');
-  
+  }
+  });
+
     // Markera i titeln
     if (titleElement) {
       const originalTitle = titleElement.textContent;
       const highlightedTitle = originalTitle.replace(new RegExp(searchTerm, 'gi'), match => `<mark>${match}</mark>`); 
-      //g: global - Detta innebär att sökningen efter matchningar i strängen inte stoppar efter den första träffen, utan fortsätter att söka efter alla möjliga matchningar.
-      //i: case-insensitive - Detta innebär att sökningen är skiftlägesokänslig, så att både stora och små bokstäver matchar.
     
       titleElement.innerHTML = highlightedTitle;
     }
-  
+
     // Markera i sammanfattningen
     if (summaryElement) {
       const originalSummary = summaryElement.textContent;
       const highlightedSummary = originalSummary.replace(new RegExp(searchTerm, 'gi'), match => `<mark>${match}</mark>`);
       summaryElement.innerHTML = highlightedSummary;
-      
     }
-    
-  }
-  

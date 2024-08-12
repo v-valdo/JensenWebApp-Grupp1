@@ -1,7 +1,7 @@
 ﻿@model IList<JensensWebApp.Models.Article>
 
 @{
-    ViewBag.Title = "Home";  //byt namn till Home
+    ViewBag.Title = "Home";  
 
     Dictionary<string, string> topicDisplayNames = new Dictionary<string, string>
 {
@@ -24,16 +24,37 @@
     {
         <div class="row justify-content-center">
             <div class="col-md-6">
-                @* ... filter and sort form controls ... *@
-
-                @* Sökfält *@
+                
+                <div class="form-group">
+                    <label for="topic">Select a topic:</label>
+                    <select id="topic" name="topic" class="form-select">
+                        <option value="">All</option>
+                        @foreach (var topic in topicDisplayNames)
+                        {
+                            <option value="@topic.Key">@topic.Value</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sortBy">Sort by:</label>
+                    <select id="sortBy" name="sortBy" class="form-select">
+                        <option value="">Default</option>
+                        <option value="newest">Newest to Oldest</option>
+                        <option value="oldest">Oldest to Newest</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Filter</button>
+                </div>
+            </div>
+        </div>
+             
                 <div class="form-group mt-3">
                     <input type="text" id="searchInput" class="form-control" placeholder="Sök efter artiklar...">
                 </div>
-            </div> 
-        </div> }
+                  
 
-    <div class="row-mt-4">
+    } <div class="row-mt-4">
         @foreach (var article in Model)
         {
             <div class="col-md-6 col-lg-4 mb-4">
@@ -49,7 +70,6 @@
             </div>
         }
 
-        @* Meddelande om inga träffar (utanför loopen) *@
-        <p id="noResultsMessage" class="text-center mt-4" style="display: none;">Inga artiklar matchade din sökning.</p> 
+        <p id="noResultsMessage" class="text-center mt-4">Inga artiklar matchade din sökning.</p> 
     </div>
 </div>

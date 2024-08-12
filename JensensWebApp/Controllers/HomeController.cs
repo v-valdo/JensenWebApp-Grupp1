@@ -14,6 +14,8 @@ namespace JensensWebApp.Controllers
         {
             _logger = logger;
 
+            
+
             _articles = new List<Article>
             {
                 new Article { Title = "Inte klart med ersättare för Ribbenvik", Summary = "▸ Regeringen och SD har ännu inte hittat någon ersättare för Migrationsverkets avgående generaldirektör Mikael Ribbenvik.", Link = "https://www.aftonbladet.se/nyheter/a/8JWWL2/inte-klart-med-ersattare-for-ribbenvik", Published = DateTime.Now.AddDays(-1), Topic = new List<string>{ "SamhalleKonflikter" } },
