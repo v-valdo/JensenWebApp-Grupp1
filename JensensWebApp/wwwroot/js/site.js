@@ -106,10 +106,10 @@ function showSlides() {
 };
 
  // Search articles
- const searchInput = document.getElementById('searchInput');
- const articleCards = document.querySelectorAll('.card');
+ const searchInput = document.getElementById('searchInput'); //kollar html dok för idsearchInput
+ const articleCards = document.querySelectorAll('.card'); //kollar och sparar alla element på sidan som har klassen .card i en NodeList - live collection of elements, nodes, comments, etc.
 
- // Debounce-funktion för att fördröja sökningen
+ // Debounce-funktion för att fördröja sökningen efter anv slutar skriva - minskar antal sökningar, förbättrar prestanda
  let timeoutId;
  function debounce(func, delay) {
    clearTimeout(timeoutId);
@@ -120,19 +120,19 @@ function showSlides() {
    debounce(() => performSearch(searchInput.value), 300); // 300 ms fördröjning
  });
 
- function performSearch(searchTerm) {
-   const normalizedSearchTerm = searchTerm.toLowerCase();
+ function performSearch(searchTerm) {  //här läggs och sparas input från anv. 
+   const normalizedSearchTerm = searchTerm.toLowerCase(); //spara så det är case-insensitve
 
-   articleCards.forEach(card => {
+   articleCards.forEach(card => { //söker igenom alla .card-klasser där element stämmer
      const title = card.querySelector('.card-title').textContent.toLowerCase();
      const summary = card.querySelector('.card-text').textContent.toLowerCase();
-     const topics = Array.from(card.querySelectorAll('.card-topic')) 
+     const topics = Array.from(card.querySelectorAll('.card-topic')) //görs till en array för topics varje artikel kan innehålla flera topics(element) 
      .map(topicElement => topicElement.textContent.toLowerCase());
 
      const isMatch = 
        title.includes(normalizedSearchTerm) || 
-       summary.includes(normalizedSearchTerm)
-       || topics.some(topic => topic.includes(normalizedSearchTerm)); 
+       summary.includes(normalizedSearchTerm) //includes är metod för strängar 
+       || topics.some(topic => topic.includes(normalizedSearchTerm)); //some() är en metod för array
 
      if (isMatch) {
        card.style.display = 'block';
@@ -156,7 +156,7 @@ function showSlides() {
    const summaryElement = card.querySelector('.card-text');
 
   // If searchTerm is empty, reset highlighting
-  if (searchTerm.trim() === ' ') {
+  if (searchTerm.trim() === '') {
     if (titleElement) {
       titleElement.innerHTML = titleElement.textContent;
     }
