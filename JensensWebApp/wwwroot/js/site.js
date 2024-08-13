@@ -1,4 +1,5 @@
-﻿window.addEventListener('DOMContentLoaded', () => {
+﻿window.addEventListener('DOMContentLoaded', () => 
+{
     const robot = document.getElementById('robot');
     const chatBubbles = document.getElementById('chat-bubbles');
     const minimizedRobot = document.getElementById('minimized-robot');
@@ -7,7 +8,6 @@
     const bubbleTop = document.getElementById('bubble-top');
     const bubbleNav = document.getElementById('bubble-nav');
     const bubbleHide = document.getElementById('bubble-hide');
-
 
     function minimizeRobot() {
         robot.classList.add('minimized');
@@ -18,7 +18,6 @@
         localStorage.setItem('robotMinimized', 'true');
     }
 
-
     function restoreRobot() {
         robot.classList.remove('minimized');
         minimizedRobot.style.display = 'none';
@@ -27,7 +26,6 @@
         scrollingText.style.display = 'block';
         localStorage.setItem('robotMinimized', 'false');
     }
-
 
     robot.addEventListener('click', () => {
         if (chatBubbles.style.display === 'flex') {
@@ -40,12 +38,10 @@
         }
     });
 
-
     bubbleTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         closeChatBubbles();
     });
-
 
     bubbleNav.addEventListener('click', () => {
         const currentPage = window.location.pathname === '/Home/Privacy' ? '/' : '/Home/Privacy';
@@ -53,27 +49,23 @@
         closeChatBubbles();
     });
 
-
     bubbleHide.addEventListener('click', minimizeRobot);
 
-
     minimizedRobot.addEventListener('click', restoreRobot);
-
 
     backdrop.addEventListener('click', () => {
         closeChatBubbles();
     });
-
 
     function closeChatBubbles() {
         chatBubbles.style.display = 'none';
         backdrop.classList.remove('active');
         robot.classList.remove('active');
     }
-});
 
 // Contact form confetti
-document.getElementById('contactForm').addEventListener('submit', function (event) {
+if (document.getElementById('contactForm')) {
+  document.getElementById('contactForm').addEventListener('submit', function (event) {
     event.preventDefault(); // making sure confetti won't activate in a incomplete form
 
     // Calculating the position of the button
@@ -111,3 +103,83 @@ function showSlides() {
   bullets[slideIndex-1].className += " active";
   setTimeout(showSlides, 3000);
 }
+};
+
+ // Search articles
+ const searchInput = document.getElementById('searchInput'); //kollar html dok för idsearchInput
+ const articleCards = document.querySelectorAll('.card'); //kollar och sparar alla element på sidan som har klassen .card i en NodeList - live collection of elements, nodes, comments, etc.
+
+ // Debounce-funktion för att fördröja sökningen efter anv slutar skriva - minskar antal sökningar, förbättrar prestanda
+ let timeoutId;
+ function debounce(func, delay) {
+   clearTimeout(timeoutId);
+   timeoutId = setTimeout(func, delay);
+ }
+
+ searchInput.addEventListener('input', () => {
+   debounce(() => performSearch(searchInput.value), 300); // 300 ms fördröjning
+ });
+
+ function performSearch(searchTerm) {  //här läggs och sparas input från anv. 
+   const normalizedSearchTerm = searchTerm.toLowerCase(); //spara så det är case-insensitve
+
+   articleCards.forEach(card => { //söker igenom alla .card-klasser där element stämmer
+     const title = card.querySelector('.card-title').textContent.toLowerCase();
+     const summary = card.querySelector('.card-text').textContent.toLowerCase();
+     const topics = Array.from(card.querySelectorAll('.card-topic')) //görs till en array för topics varje artikel kan innehålla flera topics(element) 
+     .map(topicElement => topicElement.textContent.toLowerCase());
+
+     const isMatch = 
+       title.includes(normalizedSearchTerm) || 
+       summary.includes(normalizedSearchTerm) //includes är metod för strängar 
+       || topics.some(topic => topic.includes(normalizedSearchTerm)); //some() är en metod för array
+
+     if (isMatch) {
+       card.style.display = 'block';
+       highlightMatches(card, normalizedSearchTerm); 
+     } else {
+       card.style.display = 'none';
+     }
+   });
+
+   // Visa meddelande om inga artiklar matchar OCH om sökfältet inte är tomt
+   const noResultsMessage = document.getElementById('noResultsMessage');
+   if (Array.from(articleCards).every(card => card.style.display === 'none') && searchTerm.trim() !== '') {
+     noResultsMessage.style.display = 'block';
+   } else {
+     noResultsMessage.style.display = 'none';
+   }
+ }
+
+ function highlightMatches(card, searchTerm) {
+   const titleElement = card.querySelector('.card-title');
+   const summaryElement = card.querySelector('.card-text');
+
+  // If searchTerm is empty, reset highlighting
+  if (searchTerm.trim() === '') {
+    if (titleElement) {
+      titleElement.innerHTML = titleElement.textContent;
+    }
+    if (summaryElement) {
+      summaryElement.innerHTML = summaryElement.textContent;
+    }
+    return; // Exit the function early if there's no search term
+  }
+
+  // Markera i titeln
+  if (titleElement) {
+    const originalTitle = titleElement.textContent;
+    const highlightedTitle = originalTitle.replace(new RegExp(searchTerm, 'gi'), match => `<mark>${match}</mark>`);
+    titleElement.innerHTML = highlightedTitle;
+  }
+
+  // Markera i sammanfattningen
+  if (summaryElement) {
+    const originalSummary = summaryElement.textContent;
+    const highlightedSummary = originalSummary.replace(new RegExp(searchTerm, 'gi'), match => `<mark>${match}</mark>`);
+    summaryElement.innerHTML = highlightedSummary;
+  }
+}
+
+}); 
+  
