@@ -2,7 +2,7 @@ html {
   font-size: 16px;
   position: relative;
   min-height: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #2a2a2a;
 }
 
@@ -22,13 +22,13 @@ body {
     font-size: 16px;
   }
   #contactText {
-      order: 1;
-      margin-bottom: 20px;
+    order: 1;
+    margin-bottom: 20px;
   }
 
   #contactForm {
-      order: 2;
-}
+    order: 2;
+  }
 }
 
 form {
@@ -44,10 +44,9 @@ form {
 }
 
 #header-logo img {
-  width: 450px;
+  width: 700px;
   height: auto;
 }
-
 
 .footer {
   height: 34px;
@@ -75,7 +74,6 @@ form {
   justify-content: center;
 }
 
-
 .navbar {
   display: flex;
   justify-content: center;
@@ -93,7 +91,6 @@ form {
   padding-bottom: 0px;
   margin-left: -10px;
   margin-right: -10px;
-
 }
 
 p.navbar-brand {
@@ -175,7 +172,6 @@ p.navbar-brand {
 .text-muted {
   color: #999;
 }
-
 
 .container {
   max-width: 800px;
@@ -362,7 +358,9 @@ h2#contactFormH2 {
 }
 
 /*Instead of listing several types, one common (contactInput) class is used for input/button*/
-.contactInput, select#subject, input#submitButton {
+.contactInput,
+select#subject,
+input#submitButton {
   background-color: #fff;
   box-sizing: border-box;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -387,11 +385,13 @@ input#submitButton:hover {
   background-color: #e6e04b;
 }
 
-.contactInput:focus, select#subject:focus{
+.contactInput:focus,
+select#subject:focus {
   border-color: #4169e1;
 }
 
-select#subject, input#submitButton {
+select#subject,
+input#submitButton {
   cursor: pointer;
 }
 
@@ -407,7 +407,7 @@ div#slideshow-container {
 }
 
 div.slides {
-  display: none
+  display: none;
 }
 
 img.slideshow {
