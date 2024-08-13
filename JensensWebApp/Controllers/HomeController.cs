@@ -9,12 +9,11 @@ namespace JensensWebApp.Controllers
         private readonly ILogger<HomeController> _logger;
         private IList<Article> _articles;
 
-
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
 
-            
+
 
             _articles = new List<Article>
             {
