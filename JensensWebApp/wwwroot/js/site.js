@@ -1,5 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => 
-{
+﻿window.addEventListener('DOMContentLoaded', () => {
     const robot = document.getElementById('robot');
     const chatBubbles = document.getElementById('chat-bubbles');
     const minimizedRobot = document.getElementById('minimized-robot');
@@ -64,50 +63,6 @@ window.addEventListener('DOMContentLoaded', () =>
     robot.classList.remove("active");
   }
 
-  // Contact form confetti
-  if (document.getElementById("contactForm")) {
-    document
-      .getElementById("contactForm")
-      .addEventListener("submitButton", function (event) {
-        event.preventDefault(); // making sure confetti won't activate in a incomplete form
-
-        // Calculating the position of the button
-        const submitButton = document.getElementById("submitButton");
-        const rect = submitButton.getBoundingClientRect();
-        const originX = (rect.left + rect.right) / 2 / window.innerWidth;
-        const originY = (rect.top + rect.bottom) / 2 / window.innerHeight;
-
-        // The confetti effects
-        confetti({
-          particleCount: 100,
-          spread: 70,
-          origin: { x: originX, y: originY },
-          colors: ["#0056b3", "#e6e04b", "#2a2a2a", "#fcf9a1"],
-        });
-      });
-
-    // Privacy policy slideshow
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-      let i;
-      const slides = document.getElementsByClassName("slides");
-      const bullets = document.getElementsByClassName("bullet");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {
-        slideIndex = 1;
-      }
-      for (i = 0; i < bullets.length; i++) {
-        bullets[i].className = bullets[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      bullets[slideIndex - 1].className += " active";
-      setTimeout(showSlides, 3000);
-    }
 
 // Contact form confetti
 if (document.getElementById('contactForm')) {
@@ -226,5 +181,5 @@ function showSlides() {
     summaryElement.innerHTML = highlightedSummary;
   }
 }
-
+  
 }); 
